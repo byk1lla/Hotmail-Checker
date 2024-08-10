@@ -34,7 +34,7 @@ This project is a PHP script designed to verify email and password combinations 
 
 ### Requirements
 
-- PHP 7.4 or higher
+- PHP 8 or higher
 - Node.js
 - cURL extension for PHP
 
@@ -58,7 +58,25 @@ Bu proje, büyük bir TXT dosyasından e-posta ve şifre kombinasyonlarını do�
 - Başarıyla doğrulanan bilgileri ayrı bir TXT dosyasına kaydeder.
 - Verileri satır satır işleyerek büyük dosyaları verimli bir şekilde yönetir.
 
+### Kurulum
 
+1. **Depoyu Klonlayın:**
+
+   ``bash
+   git clone https://github.com/byk1lla/Hotmail-Checker.git
+   cd Hotmail-Checker
+   ```
+   ## Node.js Bağımlılıklarını Yükleyin:
+
+    app.js dosyasının bulunduğu dizine gidin ve gerekli bağımlılıkları yükleyin:
+   ``bash
+    npm install
+   ```
+
+   ## Node.js Sunucusunu başlatın:
+   ```bash
+     node app.js
+   ```
 
 
 ### Gereksinimler
