@@ -1,12 +1,12 @@
 
-# Instagram Login Checker
+# Hotmail Login Checker
 
 Bu uygulama **Imap** Kullanarak txt/hotmail.txt de bulunan ``` username:password``` Biçimindeki kullanıcı adları ve şifreleri [Rest.php](https://github.com/byk1lla/Hotmail-Checker/blob/main/php/rest.php) Yardımıyla Tek tek deneyerek Doğru olanları bulmanıza yarayan bir REST API Uygulamasıdır.
 ## API Kullanımı
 
 #### Kullanıcı Girişini Yap
 ```http
-  POST yourhost:3000/login
+  POST yourhost:3000/verify
 ```
 
 | Parametre | Tip     | Açıklama                |
