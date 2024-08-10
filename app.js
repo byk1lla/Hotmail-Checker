@@ -24,7 +24,7 @@ app.post('/verify', async (req, res) => {
         await connection.end();
         res.json({ success: true, message: 'Doğrulama başarılı!' });
     } catch (error) {
-        res.json({ success: false, message: 'Doğrulama başarısız!', error: error.message });
+        res.json({ message: 'Doğrulama başarısız!', error: error.message });
     }
 });
 
