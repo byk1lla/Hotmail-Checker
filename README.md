@@ -1,93 +1,93 @@
-# Hotmail Email Verification Tool
 
-## English
+# Instagram Login Checker
 
-This project is a PHP script designed to verify email and password combinations from a large TXT file. The script reads the email credentials from the file, sends a verification request to a Node.js server, and saves the successfully verified credentials to a new file.
+Bu uygulama **Imap** Kullanarak txt/hotmail.txt de bulunan ``` username:password``` Biçimindeki kullanıcı adları ve şifreleri [Rest.php](https://github.com/byk1lla/Hotmail-Checker/blob/main/php/rest.php) Yardımıyla Tek tek deneyerek Doğru olanları bulmanıza yarayan bir REST API Uygulamasıdır.
+## API Kullanımı
 
-### Features
+#### Kullanıcı Girişini Yap
+```http
+  POST yourhost:3000/login
+```
 
-- Reads email and password combinations from a large TXT file.
-- Verifies each email using a Node.js server.
-- Saves successfully verified credentials to a separate TXT file.
-- Handles large files efficiently by processing the data line by line.
+| Parametre | Tip     | Açıklama                |
+| :-------- | :------- | :------------------------- |
+| `username` | `string` |  Kullanıcı Adı |
+| `password` | `string` |  şifre |
 
+Kullanıcı Adı şifrelerle burdan giriş kontrolü yapabilirsiniz.
 
-### Installation
+## Kurulum 
 
-1. **Clone the Repository:**
+Instagram Checkeri Yüklemek için aşağıdaki adımları izleyin.
 
-   ```bash
-   git clone https://github.com/byk1lla/Hotmail-Checker.git
-   cd Hotmail-Checker
-   ```
-   ## Install Node.js Dependencies:
+```bash 
+  git clone https://github.com/byk1lla/Hotmail-Checker
+  cd Hotmail-Checker
+```
+Eğer Windowstaysanız Projenin Kaynak Dosyalarını [buraya tıklayıp](https://github.com/byk1lla/Hotmail-Checker/archive/refs/heads/main.zip) indirebilirsiniz.
 
-    Navigate to the directory containing app.js and install the required dependencies:
-   ```bash
-    npm install
-   ```
+Programın Çalışması için bazı kütüphaneleri kurmanız gerekiyor.
 
-   ## Start the Node.js Server:
-   ```bash
-     node app.js
-   ```
-
-### Requirements
-
-- PHP 8 or higher
-- Node.js
-- cURL extension for PHP
-
-### Usage
-
-1. Place your email and password combinations in a `emails.txt` file, formatted as `email:password`.
-2. Run the PHP script to start the verification process.
-3. The script will save successfully verified credentials to a `successful_verifications.txt` file.
-4. The script outputs the number of successful verifications and the path to the output file.
-
----
-
-## Türkçe
-
-Bu proje, büyük bir TXT dosyasından e-posta ve şifre kombinasyonlarını doğrulamak için tasarlanmış bir PHP betiğidir. Betik, dosyadan e-posta bilgilerini okur, Node.js sunucusuna doğrulama isteği gönderir ve başarılı doğrulanan bilgileri yeni bir dosyaya kaydeder.
-
-### Özellikler
-
-- Büyük bir TXT dosyasından e-posta ve şifre kombinasyonlarını okur.
-- Her e-postayı bir Node.js sunucusu kullanarak doğrular.
-- Başarıyla doğrulanan bilgileri ayrı bir TXT dosyasına kaydeder.
-- Verileri satır satır işleyerek büyük dosyaları verimli bir şekilde yönetir.
-
-### Kurulum
-
-1. **Depoyu Klonlayın:**
-
-   ``bash
-   git clone https://github.com/byk1lla/Hotmail-Checker.git
-   cd Hotmail-Checker
-   ```
-   ## Node.js Bağımlılıklarını Yükleyin:
-
-    app.js dosyasının bulunduğu dizine gidin ve gerekli bağımlılıkları yükleyin:
-   ``bash
-    npm install
-   ```
-
-   ## Node.js Sunucusunu başlatın:
-   ```bash
-     node app.js
-   ```
+```bash 
+  npm install
+```
 
 
-### Gereksinimler
+## Kullanım/Örnekler
+Rest API ı çalıştırmak için 
 
-- PHP 8 veya üstü
-- Node.js
-- PHP için cURL eklentisi
+```bash
+  node app.js
+```
 
-### Kullanım
+Komutunu Çalıştırın.
 
-1. E-posta ve şifre kombinasyonlarınızı `email:password` formatında `emails.txt` dosyasına yerleştirin.
-2. Doğrulama sürecini başlatmak için PHP betiğini çalıştırın.
-3. Betik, başarıyla doğrulanan bilgileri `successful_verifications.txt` dosyasına kaydedecektir.
-4. Betik, başarılı doğrulama sayısını ve çıktı dosyasının yolunu gösterecektir.
+Eğer **Xampp** Kullanıyorsanız API'ı Kurmak istediğiniz Klasöre atabilirsiniz.
+
+Yok ben shellciyim arkadaş diyorsanız da 
+
+```bash 
+  php rest.php
+```
+
+Şeklinde Kullanabilirsiniz.
+
+## Gereksinimler
+  NODE: **20.X**
+  PHP: **8.X**
+
+Not: Unutmayın ki; txtdeki veriler ```username:password``` şeklinde olmalıdır yoksa çalışmaz.
+
+#### Rest.php
+**$inputFile** dan gelen verileri işleyerek **/verify**'a  istek gönderiyor.
+```php 
+  $inputFile  = "TXT/yourtxtfile.txt";
+```
+
+
+## App.js
+<div align="center"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-download.com%2Fwp-content%2Fuploads%2F2019%2F01%2FJavaScript_Logo.png&f=1&nofb=1&ipt=1c662e3132fbd96664cbcdc41fe63634f9d05afac8850a19f702138641799a7e&ipo=images" 
+  width="20"> <span padding="1px">app.js</span> </div>
+ 
+> [!CAUTION]
+> APP Js Programın Yapı Taşıdır ve eğer herhangi bir __sorun__ olursa program çalışmayacaktır. 
+
+Burada Login işlemleri gerçekleşir.
+
+> [!IMPORTANT]
+> Sadece **POST** İstekleri Kabul Edilir.
+
+
+| Parametre | Tip     | Açıklama                |
+| :-------- | :------- | :------------------------- |
+| `success` | `boolean` |  Eğer Giriş Başarılıysa true eğer değilse false değerini döndürür. |
+| `error` | `boolean` |  Eğer Giriş Başarısızsa true değerini döndürür.  |
+| `message` | `string` | Sunucudan gelen mesajları döndürür |
+
+## Link
+
+[twitter](https://twitter.com/byk1lla_)
+
+## Licences
+[MIT](https://choosealicense.com/licenses/mit/)
+[APACHE 2.0](https://choosealicense.com/licenses/apache-2.0/)
