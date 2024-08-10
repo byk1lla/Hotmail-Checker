@@ -18,7 +18,7 @@ Kullanıcı Adı şifrelerle burdan giriş kontrolü yapabilirsiniz.
 
 ## Kurulum 
 
-Instagram Checkeri Yüklemek için aşağıdaki adımları izleyin.
+Hotmail Checkeri Yüklemek için aşağıdaki adımları izleyin.
 
 ```bash 
   git clone https://github.com/byk1lla/Hotmail-Checker
